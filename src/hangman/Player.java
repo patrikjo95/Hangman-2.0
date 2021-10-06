@@ -2,8 +2,8 @@ package hangman;
 
 public class Player {
 
-    private int gamesPlayed;
-    private int gamesWon;
+    private int gamesPlayed = 0;
+    private int gamesWon = 0;
     private String playerName = "";
 
     public Player() {
@@ -26,7 +26,7 @@ public class Player {
         this.gamesPlayed = gamesPlayed;
     }
 
-    public void increaseGamesWon(int gamesWon) {
+    public void setGamesWon(int gamesWon) {
         this.gamesWon = gamesWon;
     }
 

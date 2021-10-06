@@ -6,7 +6,7 @@ public class Menu {
 
     private String[] menuStrings;
 
-    Scanner input = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
 
     //arrayvariabel, innehåller massa stränger som ska skrivas ut i show()
 

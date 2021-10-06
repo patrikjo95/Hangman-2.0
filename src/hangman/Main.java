@@ -7,14 +7,14 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        Player player = new Player();
-        Menu startMenu = new Menu();
+        Player player = null; //this variable contains the loaded player.
+        Menu startMenu = new Menu(null);
 
 //en for loop som loopar igenom alla strängar i arrayen och printar ut dem.
 
         System.out.println("* Välkomen till Defenders hangman *");
         System.out.print("Inladdad spelare: ");
-        if(player.getPlayerName().equals("")) {
+        if(player == null) {
             System.out.println("ingen");
         }else {
             System.out.println(player.getPlayerName());
@@ -29,15 +29,20 @@ public class Main {
 
         switch (menyVal) {
             case "1":
-                System.out.println("Ny spelare vald, vänligen skriv in ditt namn:");
-                player.setPlayerName(startMenu.getString());
-
+                if(player == null) {
+                    System.out.println("Ny spelare vald, vänligen skriv in ditt namn:");
+                    player = new Player();
+                    player.setPlayerName(startMenu.getString());
+                }
+                //Start game.
+                Game newGame = new Game(player);
 
                 break;
             case "2":
 
                 break;
             case "3":
+
                 break;
 
             case "4":
