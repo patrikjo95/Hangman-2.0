@@ -1,1 +1,1 @@
-test123123123123123
+test:<gamesPlayed:0,gamesWon:0>

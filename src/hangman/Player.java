@@ -26,7 +26,6 @@ public class Player {
         gamesPlayed++;
     }
 
-    //Tjenare
     public void setGamesPlayed(int gamesPlayed) {
         this.gamesPlayed = gamesPlayed;
     }
