@@ -21,17 +21,30 @@ public class Player {
     public int getGamesPlayed() {
         return gamesPlayed;
     }
+
+    public void increaseGamesPlayed(){
+        gamesPlayed++;
+    }
+
     //Tjenare
     public void setGamesPlayed(int gamesPlayed) {
         this.gamesPlayed = gamesPlayed;
+    }
+
+    public int getGamesWon() {
+        return gamesWon;
+    }
+
+    public void increaseGamesWon(){
+        gamesWon++;
     }
 
     public void setGamesWon(int gamesWon) {
         this.gamesWon = gamesWon;
     }
 
-    public int getGamesWon() {
-        return gamesWon;
+    public int getGamesLost() {
+        return gamesPlayed - gamesWon;
     }
 
 }
