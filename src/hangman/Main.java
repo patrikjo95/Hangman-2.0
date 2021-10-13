@@ -1,8 +1,15 @@
 package hangman;
 
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
+
+    /* TODO:
+    *  Lägga till färg i konsolen.
+    * */
+
+    private static String playersFile = "src/hangman/data/players.txt";
 
     public static void main(String[] args) {
 
@@ -30,9 +37,8 @@ public class Main {
         switch (menyVal) {
             case "1":
                 if(player == null) {
-                    System.out.println("Ny spelare vald, vänligen skriv in ditt namn:");
-                    player = new Player();
-                    player.setPlayerName(startMenu.getString());
+                    createPlayer();
+                    return;
                 }
                 //Start game.
                 Game newGame = new Game(player);
@@ -52,5 +58,44 @@ public class Main {
                 System.out.println("Felaktigt val, välj mellan 1-4");
         }
     }
+
+    public static void createPlayer() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(playersFile));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(playersFile));
+
+            Menu newPlayerMenu = new Menu(new String[]{
+                    "Ny spelare vald,",
+                    "Mata in namn på spelare",
+            });
+            newPlayerMenu.show();
+            String playerName = newPlayerMenu.getString();
+            bw.write(playerName);
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void loadPlayer(String name) {
+
+
+    }
+/*
+* player1[gamesWon:0,gamesPlayed:0]
+* player1:
+* gamesWon: 0
+* gamesPlayed: 0
+* gamesLost: 0
+* */
+    public static void savePlayer(){
+
+    }
+
+    public static void deletePlayer() {
+
+    }
+
 }
 

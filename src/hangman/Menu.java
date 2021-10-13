@@ -24,18 +24,31 @@ public class Menu {
 
     }
 
+    public void updateMenu(String[] menuStrings) {
+        this.menuStrings = menuStrings;
+    }
+
     //Hämtar en string från användarens input
     public String getString(){
-        String getString = input.nextLine();
-        return getString;
+        return input.nextLine();
     }
 
     //Hämtar en en bokstav från användaren
     public String getAlpha(){
-        return null;
+        String str = input.nextLine();
+        if(!str.matches("[a-zA-ZåäöÅÄÖ]+")){
+            System.out.println("Du kan bara mata in bokstäver.");
+            return getAlpha();
+        }
+        if(str.length() > 1){
+            System.out.println("Du kan bara mata in en bokstav i taget, försök igen.");
+            return getAlpha();
+        }
+
+        return str;
     }
 
-   //Hämtar ett nummer från användaren
+    //Denna metod är värdelös.
     public int getInt(){
         return 0;
     }
