@@ -27,28 +27,36 @@ public class Menu {
     public void updateMenu(String[] menuStrings) {
         this.menuStrings = menuStrings;
     }
-
-    //Hämtar en string från användarens input
+    /**
+     *
+     * @return string input from user
+     * */
     public String getString(){
         return input.nextLine();
     }
-
+    /**
+     *
+     * @return char input from user
+     * */
     //Hämtar en en bokstav från användaren
     public String getAlpha(){
         String str = input.nextLine();
         if(!str.matches("[a-zA-ZåäöÅÄÖ]+")){
-            System.out.println("Du kan bara mata in bokstäver.");
+            System.out.println(Color.RED + "Du kan bara mata in bokstäver." + Color.RESET);
             return getAlpha();
         }
         if(str.length() > 1){
-            System.out.println("Du kan bara mata in en bokstav i taget, försök igen.");
+            System.out.println(Color.RED + "Du kan bara mata in en bokstav i taget, försök igen." + Color.RESET);
             return getAlpha();
         }
 
         return str;
     }
 
-    //Denna metod är värdelös.
+    /**
+     * Denna metod är värdelös.
+     * @return inte ett piss.
+     * */
     public int getInt(){
         return 0;
     }

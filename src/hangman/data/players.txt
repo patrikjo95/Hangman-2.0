@@ -1,1 +1,4 @@
-test:<gamesPlayed:0,gamesWon:0>
+qwe:<gamesPlayed:0,gamesWon:0>
+ert:<gamesPlayed:0,gamesWon:0>
+sad:<gamesPlayed:0,gamesWon:0>
+fgh:<gamesPlayed:0,gamesWon:0>

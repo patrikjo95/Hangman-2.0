@@ -1,163 +1,77 @@
 package hangman;
 
+import hangman.data.DataHandler;
+
 import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.io.*;
 import java.util.Scanner;
 
 public class Main {
 
     /* TODO:
-    *  Lägga till färg i konsolen.
-    *  När vi får tillbaka uppgiften så kanske vi kan göra egna exception som: playerdamageexception typ.
-    * */
-
-    private static String playersFile = "src/hangman/data/players.txt";
-
-    private static Player player = null; //this variable contains the loaded player.
+     *  När vi får tillbaka uppgiften så kanske vi kan göra egna exception som: playerfiledamageexception typ.
+     *  Kommentera koden.
+     * */
 
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+        Player player = null; //this variable contains the loaded player.
         Menu startMenu = new Menu(null);
+        DataHandler dataHandler = new DataHandler();
 
-//en for loop som loopar igenom alla strängar i arrayen och printar ut dem.
+        boolean running = true;
 
-        System.out.println("* Välkomen till Defenders hangman *");
-        System.out.print("Inladdad spelare: ");
-        if(player == null) {
-            System.out.println("ingen");
-        }else {
-            System.out.println(player.getPlayerName());
-        }
-        System.out.println("Välj ett av nedanstående alternativ:");
-        System.out.println("1) Spela");
-        System.out.println("2) Ladda in spelare");
-        System.out.println("3) Spara spelare");
-        System.out.println("4) Avsluta spelet");
+        do {
 
-        do{
-            switch (scan.nextLine()) {
+            startMenu.updateMenu(new String[]{
+                    Color.PURPLE + "* Välkomen till Defenders hangman *" + Color.RESET,
+                    "Inladdad spelare: " + Color.BLUE + (player == null ? "Ingen" : player.getName()) + Color.RESET,
+                    "Välj ett av nedanstående alternativ med respektive " + Color.YELLOW + "nummer:" + Color.RESET,
+                    Color.YELLOW + "1) " + Color.RESET + "Spela",
+                    Color.YELLOW + "2) " + Color.RESET + "Ladda in spelare",
+                    Color.YELLOW + "3) " + Color.RESET + "Spara spelare",
+                    Color.YELLOW + "4) " + Color.RESET + "Ta bort inladdad spelare",
+                    Color.YELLOW + "5) " + Color.RESET + "Avsluta spelet"
+            });
+            startMenu.show();
+
+            switch (startMenu.getString()) {
                 case "1":
                     if (player == null) {
-                        createPlayer();
-                        return;
+                        Player newPlayer = dataHandler.createPlayer();
+                        if(newPlayer == null){
+                            break;
+                        }else{
+                            player = newPlayer;
+                        }
                     }
                     //Start game.
-                    Game newGame = new Game(player);
-
+                    Game newGame = new Game(player, dataHandler.getWordsFromStorage());
                     break;
                 case "2":
-                    loadPlayer();
+                    Player loadedPlayer = dataHandler.loadPlayer();
+                    player = loadedPlayer == null ? player : loadedPlayer;
                     break;
                 case "3":
-
+                    dataHandler.savePlayer(player);
                     break;
 
                 case "4":
+                    dataHandler.deletePlayer(player);
+                    player = null;
+                    break;
+
+                case "5":
+                    System.out.println(Color.CYAN + "Avslutar spelet.");
+                    System.out.println("Hade gött, hej!");
+                    running = false;
                     break;
 
                 default:
-                    System.out.println("Felaktigt val, välj mellan 1-4");
+                    System.out.println(Color.RED + "Felaktigt val, välj mellan 1-5" + Color.RESET);
             }
-        }while(scan.hasNextLine());
-    }
-
-    public static void createPlayer() {
-        try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(playersFile, true));
-            Scanner input = new Scanner(new File(playersFile));
-
-            Menu newPlayerMenu = new Menu(new String[]{
-                    "Ny spelare vald,",
-                    "Mata in namn på spelare",
-            });
-            newPlayerMenu.show();
-            String playerName = newPlayerMenu.getString();
-
-            String line = "";
-            while(input.hasNextLine()) {
-                line = input.nextLine();
-                if (getFixedPlayerName(line).equals(playerName)) {
-                    System.out.println("Namn finns,");
-                    System.out.println("Vänligen välj ett annat namn");
-                    playerName = newPlayerMenu.getString();
-                    input = new Scanner(new File(playersFile)); //Vi kommer att förbättra sen(Medveten ineffektivt)
-                }
-            }
-            playerName += ":<gamesPlayed:0,gamesWon:0>";
-            bw.write(playerName);
-            bw.newLine();
-            bw.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void loadPlayer() {
-        try {
-            Scanner input = new Scanner(new File(playersFile));
-
-            Menu loadPlayerMenu = new Menu(new String[]{
-                    "Vilken spelare vill du ladda in?"
-            });
-            loadPlayerMenu.show();
-
-            String playerName = loadPlayerMenu.getString();
-
-            String line = "";
-            while(input.hasNextLine()) {
-                line = input.nextLine();
-                if(getFixedPlayerName(line).equals(playerName)) {
-                    player = new Player();
-                    player.setPlayerName(getFixedPlayerName(line));
-                    player.setGamesWon(getFixedPlayerWins(line));
-                    player.setGamesPlayed(getFixedPlayerGamesPlayed(line));
-                }
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-/*
-* player1[gamesWon:0,gamesPlayed:0]
-* player1:
-* gamesWon: 0
-* gamesPlayed: 0
-* gamesLost: 0
-* */
-    public static void savePlayer(){
-
-    }
-
-    public static void deletePlayer() {
-
-    }
-
-    private static String getFixedPlayerName(String input) {
-        return input.split(":")[0];
-    }
-
-    private static int getFixedPlayerWins(String input){
-        String content = input.split("<|>")[1];
-        String wins = content.split(",")[1].split(":")[1];
-        try{
-            return Integer.parseInt(wins);
-        }catch(Exception e) {
-            System.out.println("Något fel hände med inladdning av spelarvinsterna.");
-        }
-        return -1;
-    }
-
-    private static int getFixedPlayerGamesPlayed(String input){
-        String content = input.split("<|>")[1];
-        String gamesPlayed = content.split(",")[0].split(":")[1];
-        try{
-            return Integer.parseInt(gamesPlayed);
-        }catch(Exception e) {
-            System.out.println("Något fel hände med inladdning av spelade matcher.");
-        }
-        return -1;
+        } while (running);
     }
 
 }
