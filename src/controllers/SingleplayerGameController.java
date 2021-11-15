@@ -68,9 +68,10 @@ public class SingleplayerGameController {
             SingleplayerGUI.inst().resetTextField();
             if(isGameOver()){
                 game.getPlayer().increaseGamesPlayed();
-                if(game.getWordRevelation().equals(game.getGameData().getGameWord())){
-                    game.getPlayer().increaseGamesWon();
+                if(game.getWordRevelation().replace(" ", "").equals(game.getGameData().getGameWord())){
+                    SingleplayerGUI.inst().setWordRevelation(game.getGameData().getGameWord());
                     SingleplayerGUI.inst().getWordLabel().setTextFill(Color.GREEN);
+                    game.getPlayer().increaseGamesWon();
                 }else{
                     SingleplayerGUI.inst().setWordRevelation(game.getGameData().getGameWord());
                     SingleplayerGUI.inst().getWordLabel().setTextFill(Color.RED);
@@ -91,7 +92,7 @@ public class SingleplayerGameController {
     }
 
     public boolean isGameOver(){
-        if(game.getWordRevelation().equals(game.getGameData().getGameWord())){
+        if(game.getWordRevelation().replace(" ", "").equals(game.getGameData().getGameWord())){
             return true;
         }else if(game.getGameData().getWrongGuesses() >= Game.MAX_WRONG_GUESSES) {
             return true;

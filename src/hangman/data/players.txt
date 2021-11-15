@@ -1,5 +1,5 @@
 Bill:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
-Bosse:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Bosse:<gamesPlayed:11,gamesWon:4,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
 Ida:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:1,multiplayerGamesWon:1,multiplayerHighestScore:11>
 Jesper:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:1,multiplayerGamesWon:0,multiplayerHighestScore:5>
 Kristina:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>

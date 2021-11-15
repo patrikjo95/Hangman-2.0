@@ -122,7 +122,7 @@ public class MultiplayerGameController  {
 
             MultiplayerGUI.inst().resetTextField();
 
-            if(game.getWordRevelation().equals(game.getGameData().getGameWord())){
+            if(game.getWordRevelation().replace(" ", "").equals(game.getGameData().getGameWord())){
                 game.getGameData().setScore(game.getPlayerTurn(), game.getGameData().getScore(game.getPlayerTurn())+2);
                 MultiplayerGUI.inst().setScore(game.getPlayerTurn().getName(), game.getGameData().getScore(game.getPlayerTurn()));
                 setupNewGameWord();

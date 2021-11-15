@@ -50,6 +50,7 @@ public class HighScoreGUI {
 
         backButton = ButtonUtils.createButton("Back", 17, Color.GRAY, 10, Color.DARKGRAY);
 
+        vbox.getChildren().add(createHeader());
         vbox.getChildren().add(firstPlace);
         vbox.getChildren().add(secondPlace);
         vbox.getChildren().add(thirdPlace);
@@ -65,6 +66,26 @@ public class HighScoreGUI {
 
     public Scene getScene(){
         return scene;
+    }
+
+    private HBox createHeader() {
+        HBox header = new HBox();
+        header.setAlignment(Pos.CENTER);
+        header.setPadding(new Insets(4,20,4,20));
+        header.setMaxWidth(400);
+
+        Label nameLabel = new Label("Name");
+        Label scoreLabel = new Label("Score");
+        nameLabel.setFont(Font.font(null, FontWeight.BOLD, FontPosture.REGULAR, 20));
+        scoreLabel.setFont(Font.font(null, FontWeight.BOLD, FontPosture.REGULAR, 20));
+        nameLabel.setPrefWidth(1000);
+        scoreLabel.setPrefWidth(1000);
+        nameLabel.setAlignment(Pos.CENTER);
+        scoreLabel.setAlignment(Pos.CENTER);
+
+        header.getChildren().add(nameLabel);
+        header.getChildren().add(scoreLabel);
+        return header;
     }
 
     public void resetList(){
