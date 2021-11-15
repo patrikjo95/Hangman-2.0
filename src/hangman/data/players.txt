@@ -7,4 +7,4 @@ Leif:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,mu
 Lena:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
 Lucas:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
 Magnus:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
-Patrik:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:1,multiplayerGamesWon:0,multiplayerHighestScore:10>
+Patrik:<gamesPlayed:1,gamesWon:1,multiplayerGamesPlayed:1,multiplayerGamesWon:0,multiplayerHighestScore:10>

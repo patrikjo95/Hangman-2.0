@@ -71,7 +71,7 @@ public abstract class Game {
                     break;
                 }
                 if (i == getGameData().getLettersGuessed().size() - 1) {
-                    wordRevelation += "_";
+                    wordRevelation += "_ ";
                 }
             }
         }
