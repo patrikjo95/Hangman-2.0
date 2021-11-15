@@ -28,7 +28,7 @@ public class MainMenuGUI {
     private BorderPane root;
 
     private VBox menuOrderVBox;
-    private Button singleplayerButton;
+    private Button singlePlayerButton;
     private Button multiplayerButton;
     private Button highScoreButton;
     private Label label;
@@ -49,12 +49,12 @@ public class MainMenuGUI {
 
         menuOrderVBox = new VBox(5);
         menuOrderVBox.setAlignment(Pos.CENTER);
-        singleplayerButton = ButtonUtils.createButton("Singleplayer", 40, Color.GRAY, 10, Color.DARKGRAY);
+        singlePlayerButton = ButtonUtils.createButton("Singleplayer", 40, Color.GRAY, 10, Color.DARKGRAY);
         multiplayerButton = ButtonUtils.createButton("Multiplayer", 40, Color.GRAY, 10, Color.DARKGRAY);
         highScoreButton = ButtonUtils.createButton("HighScore", 30, Color.GRAY, 10, Color.DARKGRAY);
 
         menuOrderVBox.getChildren().add(imageView);
-        menuOrderVBox.getChildren().add(singleplayerButton);
+        menuOrderVBox.getChildren().add(singlePlayerButton);
         menuOrderVBox.getChildren().add(multiplayerButton);
         menuOrderVBox.getChildren().add(highScoreButton);
 
@@ -70,7 +70,7 @@ public class MainMenuGUI {
     }
 
     public void setSingleplayerListener(EventHandler<ActionEvent> listener) {
-        singleplayerButton.setOnAction(listener);
+        singlePlayerButton.setOnAction(listener);
     }
 
     public void setMultiplayerListener(EventHandler<ActionEvent> listener) {

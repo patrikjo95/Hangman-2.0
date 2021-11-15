@@ -1,8 +1,10 @@
-Lucas:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
-Patrik:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
 Bill:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
 Bosse:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Ida:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:1,multiplayerGamesWon:1,multiplayerHighestScore:11>
+Jesper:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:1,multiplayerGamesWon:0,multiplayerHighestScore:5>
 Kristina:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
-Magnus:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
-Lena:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
 Leif:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Lena:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Lucas:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Magnus:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Patrik:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:1,multiplayerGamesWon:0,multiplayerHighestScore:10>
