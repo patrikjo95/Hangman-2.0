@@ -62,16 +62,16 @@ public abstract class Game {
         String wordRevelation = "";
         for (char letter : getGameData().getGameWord().toCharArray()) {
             if (getGameData().getLettersGuessed().isEmpty()) {
-                wordRevelation += "_";
+                wordRevelation += "_ ";
                 continue;
             }
             for (int i = 0; i < getGameData().getLettersGuessed().size(); i++) {
                 if (getGameData().getLettersGuessed().get(i) == letter) {
-                    wordRevelation += letter;
+                    wordRevelation += letter + " ";
                     break;
                 }
                 if (i == getGameData().getLettersGuessed().size() - 1) {
-                    wordRevelation += "_";
+                    wordRevelation += "_ ";
                 }
             }
         }
