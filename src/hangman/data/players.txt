@@ -1,4 +1,8 @@
-qwe:<gamesPlayed:0,gamesWon:0>
-ert:<gamesPlayed:0,gamesWon:0>
-sad:<gamesPlayed:0,gamesWon:0>
-fgh:<gamesPlayed:0,gamesWon:0>
+Lucas:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Patrik:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Bill:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Bosse:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Kristina:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Magnus:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Lena:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>
+Leif:<gamesPlayed:0,gamesWon:0,multiplayerGamesPlayed:0,multiplayerGamesWon:0,multiplayerHighestScore:0>

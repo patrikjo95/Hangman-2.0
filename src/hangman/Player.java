@@ -2,12 +2,21 @@ package hangman;
 
 public class Player {
 
+    private String playerName = "";
+
     private int gamesPlayed = 0;
     private int gamesWon = 0;
-    private String playerName = "";
+
+    private int multiplayerGamesPlayed = 0;
+    private int multiplayerGamesWon = 0;
+    private int multiplayerHighestScore = 0;
 
     public Player() {
 
+    }
+
+    public Player(String playerName) {
+        this.playerName = playerName;
     }
 
     public String getName() {
@@ -42,9 +51,39 @@ public class Player {
         this.gamesWon = gamesWon;
     }
 
-    public int getGamesLost() {
-        return gamesPlayed - gamesWon;
+    public int getMultiplayerGamesPlayed(){
+        return multiplayerGamesPlayed;
     }
+
+    public void increaseMultiplayerGamesPlayed(){
+        multiplayerGamesPlayed++;
+    }
+
+    public void setMultiplayerGamesPlayed(int multiplayerGamesPlayed) {
+        this.multiplayerGamesPlayed = multiplayerGamesPlayed;
+    }
+
+    public int getMultiplayerGamesWon(){
+        return multiplayerGamesWon;
+    }
+
+    public void increaseMultiplayerGamesWon(){
+        multiplayerGamesWon++;
+    }
+
+    public void setMultiplayerGamesWon(int multiplayerGamesWon){
+        this.multiplayerGamesWon = multiplayerGamesWon;
+    }
+
+    public int getMultiPlayerHighestScore(){
+        return multiplayerHighestScore;
+    }
+
+    public void setMultiplayerHighestScore(int multiplayerHighestScore){
+        this.multiplayerHighestScore = multiplayerHighestScore;
+    }
+
+
 
 }
 
